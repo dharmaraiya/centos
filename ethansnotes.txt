@@ -1,0 +1,117 @@
+Commands
+
+RPM Install
+CD /Folder where RPM exist
+# rpm -ivh *.rpm
+
+
+PEM to PPK
+
+[dharmesh@localhost SSH Key]$ puttygen LinuxKey_SSH.pem -O private -o LinuxKey_SSH.ppk
+
+
+AWS VMs:
+
+My awsEC2 :  ssh -i "devops.pem" ec2-user@ec2-18-217-103-10.us-east-2.compute.amazonaws.com -y
+My awsdemo:  ssh -i "awsdemo.pem" ec2-user@ec2-18-221-196-17.us-east-2.compute.amazonaws.com -y
+
+
+=================================================
+Day 3
+
+gitcommands
+.SSH
+
+copy rsa from machine1 to machine2 once done
+login from machine1 to machine2 via ssh
+
+#ssh-keygen -t rsa
+#cat /root/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLCr/1tkMeQoUvxQCuNxTS5VdZUqnTv1EPB2JhE8aM9fjrsFAFosji8lP5CeOgKHnMq/W9kYzXVUstNhX1sh5OWblPDc6V0P/fXzW7esfORRxkcBIqy/nF1sei5Xt1YNseEjLUQ66Og82YM/UMTC6ZRcoqbJ8/Drs5T9c+n7MaE0W/X6ZPHrnveBFXvLTpO3JSosHY7EcCoy6/XhZIi7qPQIERHjFRxxPCRCM80rX86InCx0/Gkdu7uylZH89BkxgjXCUZKfew5BS5pm69fZ+ZC4MRQJ7BbQ3QvaftAc8EXCR/YlXWdo73xDXu1AN1Yv71LQI7dfEXHxkzWZmff6NL root@ip-172-31-35-229.us-east-2.compute.internal
+
+
+login to second VM
+#cd /root/.ssh
+#vi authorized_keys
+wq!
+
+paste publick key here
+
+
+
+#ssh root@172.31.39.233
+ASk for non host confirmation
+now prompt chnage to remote host
+
+
+# cd /root/.ssh/
+#ls -lrt
+#vi authorized_keys
+
+
+
+rpm -qa | grep tree   (Toi check the RPM package)
+ls -lrq (Check permission and user)
+
+#Permission commands
+
+
+
+=====================================================
+
+GIT Hub
+
+#mkdir -p devops (Create on Linux)
+
+mkdir -p /opt/devops && cd /opt/devops/   # create and chnage directory
+
+Install git
+yum install git -y
+
+git init (create default local repository)
+
+create logical area
+1.Untracked Area  ---      git add (to Move file to Commit Area)
+2.Commit Area  ---         git commit  
+3. Repository Area --
+
+
+#history  (it will show all executed commands)
+Now create one text file called linuxcommands and save with vi
+
+#git status  ()
+
+[root@ip-172-31-39-233 devops]# git remote add origin https://github.com/dharmaraiya/devops.git
+[root@ip-172-31-39-233 devops]# git push -u origin master
+
+Authenticate with GIT Hub account
+
+
+[root@ip-172-31-39-233 devops]# history | grep git
+
+git add
+git commit "my first commit"
+[root@ip-172-31-39-233 devops]# git push -u origin master
+
+
+To copy or clone from git hub to new machine
+
+Click on clone or download
+https://github.com/dharmaraiya/devops.git  copy this link
+
+git clone https://github.com/dharmaraiya/devops.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
